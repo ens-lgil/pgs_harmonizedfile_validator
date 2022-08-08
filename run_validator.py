@@ -35,9 +35,9 @@ def main():
 
     argparser = argparse.ArgumentParser()
     argparser.add_argument("-t", help=f"Type of validator: {' or '.join(hm_types)}", metavar='HM_TYPE')
-    argparser.add_argument("-f", help='The path to the polygenic scoring file to be validated (no need to use the [--dir] option)', metavar='SCORING_FILE_NAME')
-    argparser.add_argument('--hm_dir', help='The name of the directory containing the harmonized files that need to processed (no need to use the [-f] option')
-    argparser.add_argument('--score_dir', help='The name of the directory containing the native scoring files to compare with harmonized files')
+    argparser.add_argument("-f", help='The path to the harmonized scoring file to be validated (no need to use the [--dir] option)', metavar='HM_FILE_NAME')
+    argparser.add_argument('--hm_dir', help='The name of the directory containing the harmonized scoring files that need to processed (no need to use the [-f] option')
+    argparser.add_argument('--score_dir', help='The name of the directory containing the formatted scoring files to compare with harmonized scoring files')
     argparser.add_argument('--log_dir', help='The name of the log directory where the log file(s) will be stored', required=True)
 
     args = argparser.parse_args()
