@@ -36,8 +36,8 @@ def main():
     argparser = argparse.ArgumentParser()
     argparser.add_argument("-t", help=f"Type of validator: {' or '.join(hm_types)}", metavar='HM_TYPE')
     argparser.add_argument("-f", help='The path to the harmonized scoring file to be validated (no need to use the [--dir] option)', metavar='HM_FILE_NAME')
-    argparser.add_argument('--hm_dir', help='The name of the directory containing the harmonized scoring files that need to processed (no need to use the [-f] option')
-    argparser.add_argument('--score_dir', help='The name of the directory containing the formatted scoring files to compare with harmonized scoring files')
+    argparser.add_argument('--hm_dir', help='The name of the directory containing the harmonized scoring files that need to processed (no need to use the [-f] option)')
+    argparser.add_argument('--score_dir', help='The name of the directory containing the formatted scoring files to compare with harmonized scoring files (optional)')
     argparser.add_argument('--log_dir', help='The name of the log directory where the log file(s) will be stored', required=True)
 
     args = argparser.parse_args()
@@ -66,6 +66,8 @@ def main():
         if not os.path.isdir(args.score_dir):
             print("Error: Scoring file directory '"+args.score_dir+"' can't be found!")
             exit(1)
+    else:
+        print("WARNING: the parameter '--score_dir' is not present in the submitted command line, therefore the comparison of the number of data rows between the formatted scoring file(s) and the harmonized scoring file(s) won't be performed.")
 
     # Select validator:
     if validator_type == 'hm_pos':

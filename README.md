@@ -10,10 +10,8 @@ optional arguments:
   -h, --help            show this help message and exit
   -t HM_TYPE            Type of validator: hm_pos or hm_final
   -f HM_FILE_NAME       The path to the harmonized scoring file to be validated (no need to use the [--dir] option)
-  --hm_dir HM_DIR       The name of the directory containing the harmonized scoring files that need to processed (no need to use the [-f]
-                        option
-  --score_dir SCORE_DIR
-                        The name of the directory containing the formatted scoring files to compare with harmonized scoring files
+  --hm_dir HM_DIR       The name of the directory containing the harmonized scoring files that need to processed (no need to use the [-f] option)
+  --score_dir SCORE_DIR The name of the directory containing the formatted scoring files to compare with harmonized scoring files (optional)
   --log_dir LOG_DIR     The name of the log directory where the log file(s) will be stored
 ```
 
